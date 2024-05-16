@@ -1,7 +1,7 @@
 class User {
   final String name;
   final String email;
-  final DateTime lastAccess;
+  final String password;
 
-  User(this.name, this.email, this.lastAccess);
+  User(this.name, this.email, this.password);
 }

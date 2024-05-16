@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
-import 'Screen/login.dart';
+import 'SesionScreen/Start_screen.dart';
+import 'SesionScreen/Sign_up.dart';
+import 'Home/HomePage.dart';
+import '/ScreenGames/ClashRoyaleScreen.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      initialRoute: StartScreen.routename,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),
+      routes: {
+        StartScreen.routename: (context) => const StartScreen(),
+        SignUp.routename: (context) => const SignUp(),
+        Homepage.routename: (context) => const Homepage(),
+        Clashroyalescreen.routename: (context) => const Clashroyalescreen(),
+      },
+      home: StartScreen(),
     );
   }
 }
