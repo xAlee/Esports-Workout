@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Cycle Deck",
+      "description": "Use a quick cycle deck with a total cost of no more than 2.9 elixir drops. This type of deck will improve your ability to defend with low-cost cards.",
+      "repetitions": 5
+    },
+    {
+      "name": "Tornado Practice",
+      "description": "Use a deck that contains Tornado. In the game, you should activate your King Tower with it.",
+      "repetitions": 5
+    },
+    {
+      "name": "Magic Archer",
+      "description": "Use a deck with Magic Archer. You should hit the tower with the Magic Archer at least 3 times.",
+      "repetitions": 7
+    }
+  ]

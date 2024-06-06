@@ -1,8 +1,9 @@
+import 'package:esports_workout/Rutines/ClashRoyaleRutine.dart';
 import 'package:flutter/material.dart';
 import 'SesionScreen/Start_screen.dart';
 import 'SesionScreen/Sign_up.dart';
 import 'Home/HomePage.dart';
-import '/ScreenGames/ClashRoyaleScreen.dart';
+import 'ScreenGames/ClashRoyaleLogin.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         StartScreen.routename: (context) => const StartScreen(),
         SignUp.routename: (context) => const SignUp(),
         Homepage.routename: (context) => const Homepage(),
-        Clashroyalescreen.routename: (context) => const Clashroyalescreen(),
+        Clashroyalelogin.routename: (context) => const Clashroyalelogin(),
+        Clashroyalerutine.routename: (context) => const Clashroyalerutine(),
       },
       home: StartScreen(),
     );

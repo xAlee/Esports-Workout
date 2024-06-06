@@ -1,4 +1,6 @@
-import 'package:esports_workout/ScreenGames/ClashRoyaleScreen.dart';
+import 'package:esports_workout/Rutines/ClashRoyaleRutine.dart';
+
+import '/ScreenGames/ClashRoyaleLogin.dart';
 import 'package:flutter/material.dart';
 import '/data/Game.dart';
 import '/data/GameTile.dart';
@@ -7,6 +9,7 @@ import '/Games/LeagueOfLegends.dart';
 import '/Games/Valorant.dart';
 import '/Games/Csgo2.dart';
 import '/Games/ApexLegends.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TrainingPage extends StatefulWidget {
   @override
@@ -18,16 +21,16 @@ class _TrainingPageState extends State<TrainingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Train for a game',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
+          title: const Text(
+            'Train for a game',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(248, 38, 12, 56),
-      ),
+          centerTitle: true,
+          backgroundColor: const Color.fromARGB(248, 38, 12, 56),
+          automaticallyImplyLeading: false),
       body: Column(
         children: [
           Expanded(
@@ -50,10 +53,17 @@ class _TrainingPageState extends State<TrainingPage> {
     );
   }
 
-  void _navigateToGameScreen(Game game) {
+  void _navigateToGameScreen(Game game) async {
     switch (game.name) {
       case 'Clash Royale':
-        Navigator.pushNamed(context, Clashroyalescreen.routename);
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        String? profileData = prefs.getString('clashroyale_profile_data');
+
+        if (profileData != null) {
+          Navigator.pushNamed(context, Clashroyalerutine.routename);
+        } else {
+          Navigator.pushNamed(context, Clashroyalelogin.routename);
+        }
         break;
 
       case 'League of Legends':
