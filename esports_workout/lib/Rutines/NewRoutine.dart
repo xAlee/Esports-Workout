@@ -23,7 +23,6 @@ class _NewRoutineScreenState extends State<NewRoutineScreen> {
     super.initState();
     _titleController = TextEditingController();
     _titleController.addListener(_updateButtonState);
-    // Ensure Flutter bindings are initialized
     WidgetsFlutterBinding.ensureInitialized();
   }
 
@@ -67,8 +66,8 @@ class _NewRoutineScreenState extends State<NewRoutineScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Icon(
                   Icons.gamepad,
                   color: Color.fromARGB(248, 38, 12, 56),
@@ -88,7 +87,7 @@ class _NewRoutineScreenState extends State<NewRoutineScreen> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Acción al presionar el botón "+ Select an Exercise"
+                //Acción al presionar el botón "+ Select an Exercise"
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -112,7 +111,7 @@ class _NewRoutineScreenState extends State<NewRoutineScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            // Aquí mostramos los ejercicios seleccionados
+            //Aquí mostramos los ejercicios seleccionados
             Expanded(
               child: ListView.builder(
                 itemCount: widget.selectedExercises.length,
@@ -133,7 +132,7 @@ class _NewRoutineScreenState extends State<NewRoutineScreen> {
         ElevatedButton.icon(
           onPressed: _isButtonEnabled
               ? () {
-                  // Acción al presionar el botón "Save Routine"
+                  //Acción al presionar el botón "Save Routine"
                   _saveRoutineToFile(
                     Routine(
                       title: _titleController.text,
@@ -165,7 +164,7 @@ class _NewRoutineScreenState extends State<NewRoutineScreen> {
         .writeAsString(json.encode(routines.map((r) => r.toJson()).toList()));
 
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
         content: Text('Routine saved successfully!'),
       ),
     );

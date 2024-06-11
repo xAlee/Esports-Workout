@@ -41,6 +41,7 @@ class _SignUpState extends State<SignUp> {
     });
   }
 
+  //Se almacenan en el dispositivo, datos de inicio de sesion como nombre, correo y contraseña
   Future<void> _saveUserData() async {
     final String name = _nameController.text;
     final String email = _emailController.text;
@@ -127,14 +128,14 @@ class _SignUpState extends State<SignUp> {
                   backgroundColor: _isSignUpButtonEnabled
                       ? const Color.fromARGB(248, 38, 12, 56)
                       : Colors
-                          .grey, // Cambia el color del botón según la habilitación
+                          .grey, //Cambia el color del botón según la habilitación
                 ),
                 onPressed: _isSignUpButtonEnabled
                     ? () {
                         _saveUserData();
                         Navigator.pushNamed(context, Homepage.routename);
                       }
-                    : null, // Deshabilita el botón si no todos los campos están llenos
+                    : null, //Deshabilita el botón si no todos los campos están llenos
                 icon: const Icon(
                   Icons.check,
                   color: Colors.white,

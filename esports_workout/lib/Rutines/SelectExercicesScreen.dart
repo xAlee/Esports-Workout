@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:convert'; // Importa para manejar JSON
-import '/Models/Exercise.dart'; // Importa la clase Exercise
+import 'dart:convert'; //Importa para manejar JSON
+import '/Models/Exercise.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'NewRoutine.dart';
 
@@ -46,7 +46,6 @@ class _SelectExerciseScreenState extends State<SelectExerciseScreen> {
                 return ListTile(
                   title: Text(exercise.name),
                   subtitle: Text(exercise.description),
-                  // Agregar el botón "Agregar a la rutina"
                   onTap: () {
                     setState(() {
                       if (isExerciseSelected) {
@@ -56,20 +55,20 @@ class _SelectExerciseScreenState extends State<SelectExerciseScreen> {
                       }
                     });
                   },
-                  // Cambiar el icono del botón dependiendo si el ejercicio está seleccionado o no
+                  //Cambiar el icono del botón dependiendo si el ejercicio está seleccionado o no
                   trailing: isExerciseSelected
-                      ? Icon(Icons.check_circle, color: Colors.green)
-                      : Icon(Icons.add_circle_outline),
+                      ? const Icon(Icons.check_circle, color: Colors.green)
+                      : const Icon(Icons.add_circle_outline),
                 );
               },
             );
           }
         },
       ),
-      // Botón para mostrar la lista de ejercicios seleccionados
+      //Botón para mostrar la lista de ejercicios seleccionados
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navegar a la pantalla de rutina con los ejercicios seleccionados
+          //Navegar a la pantalla de rutina con los ejercicios seleccionados
           Navigator.push(
             context,
             MaterialPageRoute(
@@ -79,18 +78,18 @@ class _SelectExerciseScreenState extends State<SelectExerciseScreen> {
             ),
           );
         },
-        child: Icon(Icons.check),
+        child: const Icon(Icons.check),
       ),
     );
   }
 
-  // Método para cargar los ejercicios desde el archivo JSON
+  //Método para cargar los ejercicios desde el archivo JSON
   Future<List<Exercise>> _loadExercisesFromJson() async {
-    // Cargar el contenido del archivo JSON
+    //Cargar el contenido del archivo JSON
     final jsonString =
         await rootBundle.loadString('assets/PreDefined_Exercises.json');
 
-    // Decodificar el JSON y crear una lista de ejercicios
+    //Decodificar el JSON y crear una lista de ejercicios
     final List<dynamic> jsonList = json.decode(jsonString);
     return jsonList.map((item) => Exercise.fromJson(item)).toList();
   }

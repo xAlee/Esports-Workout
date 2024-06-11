@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "esports_workout",
+            "cwd": "esports_workout",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "esports_workout (profile mode)",
+            "cwd": "esports_workout",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "esports_workout (release mode)",
+            "cwd": "esports_workout",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

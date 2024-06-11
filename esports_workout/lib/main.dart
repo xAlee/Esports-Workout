@@ -20,13 +20,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
+        //Ruta a cada pantalla
         StartScreen.routename: (context) => const StartScreen(),
         SignUp.routename: (context) => const SignUp(),
         Homepage.routename: (context) => const Homepage(),
         Clashroyalelogin.routename: (context) => const Clashroyalelogin(),
         Clashroyalerutine.routename: (context) => const Clashroyalerutine(),
       },
-      home: StartScreen(),
+      home: const StartScreen(), //Ruta inicial
     );
   }
 }

@@ -13,17 +13,18 @@ class Clashroyalelogin extends StatefulWidget {
   _ClashroyaleloginState createState() => _ClashroyaleloginState();
 }
 
+//Nos conectamos a la Api de Clash royale, mediante la Key
 class _ClashroyaleloginState extends State<Clashroyalelogin> {
   String tag = '';
   String nickName = '';
   final token =
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjRlYjdlN2NmLWJiZTItNGExNy1iYTU5LWE0ZDRjMmU1MmQwYyIsImlhdCI6MTcxNTg2MjcyMCwic3ViIjoiZGV2ZWxvcGVyLzk1MmJhMmI4LTJhYjMtMjA2NC1jNTM0LWRmOWUxYWNiZjgwMCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODEuMTYzLjIwNS41NyJdLCJ0eXBlIjoiY2xpZW50In1dfQ.w25A0GD7jvNv8Io__mkwaf3btevRr_9lLHaL65BL4qkgirfjd_F9ws1Cpx006m51oEW5MzH_IosM2xup3KaZZg'; // Remplaza esto con tu token de API de Clash Royale
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjA0YmY0OWEyLWY0YzMtNGI0Yi04ODBlLWM3ZjJjZGE1MDBjNiIsImlhdCI6MTcxODA3MjUwMSwic3ViIjoiZGV2ZWxvcGVyLzk1MmJhMmI4LTJhYjMtMjA2NC1jNTM0LWRmOWUxYWNiZjgwMCIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxODEuMTYzLjIwNS41NyJdLCJ0eXBlIjoiY2xpZW50In1dfQ.GzH5c5df5V5fHJEnd8LJz4-sXB917eREeSc5OWky3aQVkN_G0O-dA6iBZwltrtol49knKNPa0JkUrR13fXtX8g';
 
   Future<void> getClashRoyalePlayerInfo() async {
     String formattedTag = tag.replaceAll(' ', '');
     formattedTag =
         formattedTag.startsWith('#') ? formattedTag.substring(1) : formattedTag;
-
+    //Para obtener los datos de un jugador necesitamos el TAG de su perfil
     final response = await http.get(
       Uri.parse("https://api.clashroyale.com/v1/players/%23" + formattedTag),
       headers: {
@@ -31,7 +32,7 @@ class _ClashroyaleloginState extends State<Clashroyalelogin> {
         'Authorization': 'Bearer ' + token,
       },
     );
-
+    //Si la petición es valida devolvera status 200 y almacenaremos los datos como nombre, tag, nivel y rango
     if (response.statusCode == 200) {
       String body = utf8.decode(response.bodyBytes);
       final jsonData = jsonDecode(body);
@@ -40,10 +41,11 @@ class _ClashroyaleloginState extends State<Clashroyalelogin> {
         nickName = jsonData["name"];
       });
 
-      // Guardar los datos del perfil en el almacenamiento local
+      //Guardar los datos del perfil en el almacenamiento local
       saveProfileData(ClashRoyaleProfile.fromJson(jsonData));
     } else {
-      print("Error: ${response.statusCode}");
+      //Para Debug
+      //print("Error: ${response.statusCode}");
     }
   }
 
@@ -78,7 +80,7 @@ class _ClashroyaleloginState extends State<Clashroyalelogin> {
       ),
       body: Container(
         color: const Color.fromARGB(
-            255, 255, 255, 255), // Color de fondo de la página Training
+            255, 255, 255, 255), //Color de fondo de la página Training
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -87,7 +89,7 @@ class _ClashroyaleloginState extends State<Clashroyalelogin> {
                 future: loadProfileData(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
+                    return const CircularProgressIndicator();
                   } else if (snapshot.hasError) {
                     return Text('Error: ${snapshot.error}');
                   } else if (snapshot.hasData) {
@@ -101,7 +103,7 @@ class _ClashroyaleloginState extends State<Clashroyalelogin> {
                       ],
                     );
                   } else {
-                    return Text('No data available');
+                    return const Text('No data available');
                   }
                 },
               ),

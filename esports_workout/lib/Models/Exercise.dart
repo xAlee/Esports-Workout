@@ -1,3 +1,4 @@
+//Esta clase contiene como debe ser ingresada una rutina, debe contener nombre, descripcion y numero de repeticiones.
 class Exercise {
   final String name;
   final String description;

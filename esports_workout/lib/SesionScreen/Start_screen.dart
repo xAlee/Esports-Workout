@@ -15,9 +15,10 @@ class StartScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
+              //Primero cargamos el logo y luego una imagen hecha por mi
               Image.asset('assets/icons/logo.jpg'),
               Image.asset('assets/icons/background_login.png'),
-              const SizedBox(height: 100),
+              const SizedBox(height: 100), //un espacio de 100 pixeles
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -88,19 +89,13 @@ class StartScreen extends StatelessWidget {
                     ),
                     backgroundColor: const Color.fromARGB(248, 38, 12, 56),
                   ),
+                  //Con el boton de Trash user podemos eliminar los datos, esto es un sistema arcaico ya
+                  //que no estoy utilizando bases de datos o conexiones con Google por ejemplo.
                   onPressed: () async {
                     final prefs = await SharedPreferences.getInstance();
                     prefs.remove('name');
                     prefs.remove('email');
                     prefs.remove('password');
-
-                    final String? name = prefs.getString('name');
-                    final String? email = prefs.getString('email');
-                    final String? password = prefs.getString('password');
-
-                    print('Name: $name');
-                    print('Email: $email');
-                    print('Password: $password');
                   },
                   icon: const Icon(
                     Icons.delete,

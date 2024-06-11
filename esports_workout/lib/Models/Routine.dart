@@ -1,5 +1,6 @@
 import 'Exercise.dart';
 
+//Esta clase contiene el estilo de una Rutina, la cual debe tener un titulo y una lista de ejercicios
 class Routine {
   final String title;
   final List<Exercise> exercises;

@@ -1,5 +1,4 @@
 import 'package:esports_workout/Rutines/ClashRoyaleRutine.dart';
-
 import '/ScreenGames/ClashRoyaleLogin.dart';
 import 'package:flutter/material.dart';
 import '/data/Game.dart';
@@ -11,7 +10,13 @@ import '/Games/Csgo2.dart';
 import '/Games/ApexLegends.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+//En esta pantalla cargamos todos los juegos disponibles, Nuevamente no tienen funciones
+//ya que son una demostracion primitiva de como se verian, solo tiene funcionalidad la de
+//Clash royale.
 class TrainingPage extends StatefulWidget {
+  static const String routename = 'trainingPage';
+  const TrainingPage({super.key});
+
   @override
   _TrainingPageState createState() => _TrainingPageState();
 }
@@ -79,7 +84,7 @@ class _TrainingPageState extends State<TrainingPage> {
         //Navigator.pushNamed();
         break;
       default:
-        // No hacer nada si el juego no está definido
+        //No hacer nada si el juego no está definido
         break;
     }
   }

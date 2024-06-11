@@ -62,7 +62,7 @@ class _HomepageState extends State<Homepage> {
             Colors.white, // Color de los íconos y etiquetas seleccionados
         unselectedItemColor: Colors.white.withOpacity(
             0.5), // Color de los íconos y etiquetas no seleccionados
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Trends',

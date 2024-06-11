@@ -32,7 +32,7 @@ class Clashroyalerutine extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => NewRoutineScreen(
+                    builder: (context) => const NewRoutineScreen(
                       selectedExercises: [],
                     ),
                   ),

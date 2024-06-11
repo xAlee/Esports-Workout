@@ -1,5 +1,6 @@
 import 'PlayerProfile.dart';
 
+//Aqui almacenamos los datos del jugador mediante la peticion de la Api, desde la pantalla ClashRoyaleLogin.dart
 class ClashRoyaleProfile extends Playerprofile {
   String tag;
 
