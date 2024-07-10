@@ -7,6 +7,7 @@ import '/Games/LeagueOfLegends.dart';
 import '/Games/Valorant.dart';
 import '/Games/Csgo2.dart';
 import '/Games/ApexLegends.dart';
+import '/Rutines/LolRutine.dart';
 
 //En esta pantalla cargamos todos los juegos disponibles, Nuevamente no tienen funciones
 //ya que son una demostracion primitiva de como se verian, solo tiene funcionalidad la de
@@ -63,8 +64,9 @@ class _TrainingPageState extends State<TrainingPage> {
         break;
 
       case 'League of Legends':
-        //Navigator.pushNamed();
+        Navigator.pushNamed(context, Lolrutine.routename);
         break;
+
       case 'Valorant':
         //Navigator.pushNamed();
         break;

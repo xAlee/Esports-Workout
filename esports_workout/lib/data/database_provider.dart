@@ -8,7 +8,7 @@ final List<Map<String, dynamic>> predefinedRoutines = [
   {
     'id': 1,
     'gameName': 'Clash Royale',
-    'title': 'Routine 1',
+    'title': 'Routine ClashRoyale',
     'difficulty': 'Easy',
     'exercises': [
       {'id': 1, 'name': 'Exercise 1 for Routine 1'},
@@ -18,7 +18,7 @@ final List<Map<String, dynamic>> predefinedRoutines = [
   {
     'id': 2,
     'gameName': 'Clash Royale',
-    'title': 'Routine 2',
+    'title': 'Routine ClashRoyale',
     'difficulty': 'Medium',
     'exercises': [
       {'id': 3, 'name': 'Exercise 1 for Routine 2'},
@@ -28,11 +28,41 @@ final List<Map<String, dynamic>> predefinedRoutines = [
   {
     'id': 3,
     'gameName': 'Clash Royale',
-    'title': 'Routine 3',
+    'title': 'Routine ClashRoyale',
     'difficulty': 'Hard',
     'exercises': [
       {'id': 5, 'name': 'Exercise 1 for Routine 3'},
       {'id': 6, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
+  {
+    'id': 4,
+    'gameName': 'League of Legends',
+    'title': 'Routine League of Legends',
+    'difficulty': 'easy',
+    'exercises': [
+      {'id': 7, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 8, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
+  {
+    'id': 5,
+    'gameName': 'League of Legends',
+    'title': 'Routine League of Legends',
+    'difficulty': 'Medium',
+    'exercises': [
+      {'id': 9, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 10, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
+  {
+    'id': 6,
+    'gameName': 'League of Legends',
+    'title': 'Routine League of Legends',
+    'difficulty': 'Hard',
+    'exercises': [
+      {'id': 11, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 12, 'name': 'Exercise 2 for Routine 3'},
     ],
   },
 ];
