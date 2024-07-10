@@ -15,19 +15,23 @@ dependencies:
   cupertino_icons: ^1.0.6
   http: ^1.2.1
   path_provider: ^2.1.3
+  sqflite: ^2.3.3+1
+  url_launcher: ^6.3.0
+  path: ^1.9.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
 
   assets:
   - assets/icons/logo.jpg
+  - assets/icons/IconoLogo.jpg
   - assets/icons/background_login.png
   - assets/games/clashroyaleIcon.png
   - assets/games/leagueoflegendsIcon.png

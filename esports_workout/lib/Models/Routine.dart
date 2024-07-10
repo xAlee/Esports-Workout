@@ -1,27 +1,39 @@
 import 'Exercise.dart';
 
-//Esta clase contiene el estilo de una Rutina, la cual debe tener un titulo y una lista de ejercicios
 class Routine {
-  final String title;
-  final List<Exercise> exercises;
+  final int id; // Identificador único de la rutina en la base de datos
+  final String gameName; // Nombre del juego al que pertenece la rutina
+  final String title; // Título de la rutina
+  final String difficulty; // Nivel de dificultad de la rutina
+  final List<Exercise> exercises; // Lista de ejercicios en la rutina
 
   Routine({
+    required this.id,
+    required this.gameName,
     required this.title,
+    required this.difficulty,
     required this.exercises,
   });
 
-  Map<String, dynamic> toJson() {
+  // Métodos para convertir una rutina a y desde un mapa (para almacenamiento en la base de datos)
+  Map<String, dynamic> toMap() {
     return {
+      'id': id,
+      'gameName': gameName,
       'title': title,
-      'exercises': exercises.map((exercise) => exercise.toJson()).toList(),
+      'difficulty': difficulty,
+      'exercises': exercises.map((exercise) => exercise.toMap()).toList(),
     };
   }
 
-  factory Routine.fromJson(Map<String, dynamic> json) {
+  factory Routine.fromMap(Map<String, dynamic> map) {
     return Routine(
-      title: json['title'],
-      exercises: (json['exercises'] as List)
-          .map((exerciseJson) => Exercise.fromJson(exerciseJson))
+      id: map['id'],
+      gameName: map['gameName'],
+      title: map['title'],
+      difficulty: map['difficulty'],
+      exercises: (map['exercises'] as List)
+          .map((exerciseMap) => Exercise.fromMap(exerciseMap))
           .toList(),
     );
   }

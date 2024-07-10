@@ -1,28 +1,31 @@
-//Esta clase contiene como debe ser ingresada una rutina, debe contener nombre, descripcion y numero de repeticiones.
 class Exercise {
+  final int id;
   final String name;
-  final String description;
-  final int repetitions;
+  final bool completed;
 
   Exercise({
+    required this.id,
     required this.name,
-    required this.description,
-    required this.repetitions,
+    this.completed = false, // Por defecto, el ejercicio no está completado
   });
 
-  Map<String, dynamic> toJson() {
+  // Métodos para convertir a mapa y desde mapa
+  Map<String, dynamic> toMap() {
     return {
+      'id': id,
       'name': name,
-      'description': description,
-      'repetitions': repetitions,
+      'completed':
+          completed ? 1 : 0, // Convertir bool a entero para SQLite (0 o 1)
     };
   }
 
-  factory Exercise.fromJson(Map<String, dynamic> json) {
+  factory Exercise.fromMap(Map<String, dynamic> map) {
     return Exercise(
-      name: json['name'],
-      description: json['description'],
-      repetitions: json['repetitions'],
+      id: map['id'],
+      name: map['name'],
+      completed: map['completed'] == 1
+          ? true
+          : false, // Convertir entero de SQLite a bool
     );
   }
 }

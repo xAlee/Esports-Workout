@@ -1,5 +1,4 @@
 import 'package:esports_workout/Rutines/ClashRoyaleRutine.dart';
-import '/ScreenGames/ClashRoyaleLogin.dart';
 import 'package:flutter/material.dart';
 import '/data/Game.dart';
 import '/data/GameTile.dart';
@@ -8,7 +7,6 @@ import '/Games/LeagueOfLegends.dart';
 import '/Games/Valorant.dart';
 import '/Games/Csgo2.dart';
 import '/Games/ApexLegends.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 //En esta pantalla cargamos todos los juegos disponibles, Nuevamente no tienen funciones
 //ya que son una demostracion primitiva de como se verian, solo tiene funcionalidad la de
@@ -61,14 +59,7 @@ class _TrainingPageState extends State<TrainingPage> {
   void _navigateToGameScreen(Game game) async {
     switch (game.name) {
       case 'Clash Royale':
-        SharedPreferences prefs = await SharedPreferences.getInstance();
-        String? profileData = prefs.getString('clashroyale_profile_data');
-
-        if (profileData != null) {
-          Navigator.pushNamed(context, Clashroyalerutine.routename);
-        } else {
-          Navigator.pushNamed(context, Clashroyalelogin.routename);
-        }
+        Navigator.pushNamed(context, Clashroyalerutine.routename);
         break;
 
       case 'League of Legends':
