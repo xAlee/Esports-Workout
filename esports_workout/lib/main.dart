@@ -1,5 +1,7 @@
+import 'package:esports_workout/Rutines/ApexRutine.dart';
 import 'package:esports_workout/Rutines/ClashRoyaleRutine.dart';
 import 'package:esports_workout/Rutines/LolRutine.dart';
+import 'package:esports_workout/Rutines/ValorantRutine.dart';
 import 'package:flutter/material.dart';
 import 'SesionScreen/Start_screen.dart';
 import 'SesionScreen/Sign_up.dart';
@@ -29,6 +31,8 @@ class MyApp extends StatelessWidget {
         Clashroyalelogin.routename: (context) => const Clashroyalelogin(),
         Clashroyalerutine.routename: (context) => const Clashroyalerutine(),
         Lolrutine.routename: (context) => const Lolrutine(),
+        Valorantrutine.routename: (context) => const Valorantrutine(),
+        Apexrutine.routename: (context) => const Apexrutine(),
         GamesPage.routeName: (context) => GamesPage(),
       },
       home: const StartScreen(), //Ruta inicial

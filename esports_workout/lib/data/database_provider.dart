@@ -65,6 +65,66 @@ final List<Map<String, dynamic>> predefinedRoutines = [
       {'id': 12, 'name': 'Exercise 2 for Routine 3'},
     ],
   },
+  {
+    'id': 7,
+    'gameName': 'Valorant',
+    'title': 'Routine Valorant',
+    'difficulty': 'Easy',
+    'exercises': [
+      {'id': 13, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 14, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
+  {
+    'id': 8,
+    'gameName': 'Valorant',
+    'title': 'Routine Valorant',
+    'difficulty': 'Medium',
+    'exercises': [
+      {'id': 15, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 16, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
+  {
+    'id': 9,
+    'gameName': 'Valorant',
+    'title': 'Routine Valorant',
+    'difficulty': 'Hard',
+    'exercises': [
+      {'id': 17, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 18, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
+  {
+    'id': 10,
+    'gameName': 'Apex',
+    'title': 'Routine Apex Legends',
+    'difficulty': 'Easy',
+    'exercises': [
+      {'id': 19, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 20, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
+  {
+    'id': 11,
+    'gameName': 'Apex',
+    'title': 'Routine Apex Legends',
+    'difficulty': 'Medium',
+    'exercises': [
+      {'id': 21, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 22, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
+  {
+    'id': 12,
+    'gameName': 'Apex',
+    'title': 'Routine Apex Legends',
+    'difficulty': 'Hard',
+    'exercises': [
+      {'id': 23, 'name': 'Exercise 1 for Routine 3'},
+      {'id': 24, 'name': 'Exercise 2 for Routine 3'},
+    ],
+  },
 ];
 
 // Inicialización de la base de datos y creación de tablas

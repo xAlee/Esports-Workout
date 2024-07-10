@@ -1,4 +1,6 @@
+import 'package:esports_workout/Rutines/ApexRutine.dart';
 import 'package:esports_workout/Rutines/ClashRoyaleRutine.dart';
+import 'package:esports_workout/Rutines/ValorantRutine.dart';
 import 'package:flutter/material.dart';
 import '/data/Game.dart';
 import '/data/GameTile.dart';
@@ -68,10 +70,10 @@ class _TrainingPageState extends State<TrainingPage> {
         break;
 
       case 'Valorant':
-        //Navigator.pushNamed();
+        Navigator.pushNamed(context, Valorantrutine.routename);
         break;
       case 'CSGO 2':
-        //Navigator.pushNamed();
+        Navigator.pushNamed(context, Apexrutine.routename);
         break;
       case 'Apex Legends':
         //Navigator.pushNamed();
