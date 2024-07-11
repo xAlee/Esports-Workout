@@ -1,3 +1,6 @@
+--VIDEO--
+https://youtu.be/8SKHajqHAD0
+
 --ESPORTS WORKOUT--
 Esports Workout is an application designed to help Esports enthusiasts improve their 
 skills and performance in a variety of competitive games such as League of Legends, 
