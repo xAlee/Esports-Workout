@@ -1,5 +1,3 @@
---VIDEO--
-https://youtu.be/8SKHajqHAD0
 
 --ESPORTS WORKOUT--
 Esports Workout is an application designed to help Esports enthusiasts improve their 
